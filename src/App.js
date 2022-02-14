@@ -9,6 +9,8 @@ import Offers from "./pages/Offers"
 import Profile from "./pages/Profile"
 import SingUp from "./pages/SignUp"
 import SingIn from "./pages/SignIn"
+import Category from "./pages/Category"
+import CreateListing from "./pages/CreateListing"
 
 function App() {
   return (
@@ -17,12 +19,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Explore />} />
         <Route path="/offers" element={<Offers />} />
-
+        <Route path="/category/:categoryName" element={<Category />} />
+          
         {/*
              We do this if we want a component to only show if the user is auth to see it
              https://www.udemy.com/course/react-front-to-back-2022/learn/lecture/29769102#questions/16585786
           */}
-          
         <Route path="/profile" element={<PrivateRoute />}>
           <Route path="/profile" element={<Profile />} />
         </Route>
@@ -30,6 +32,7 @@ function App() {
         <Route path="/sign-in" element={<SingIn />} />
         <Route path="/sign-up" element={<SingUp />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/create-listing" element={<CreateListing />} />
       </Routes>
       <Navbar />
     </BrowserRouter>
